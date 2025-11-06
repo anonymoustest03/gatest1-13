@@ -196,12 +196,12 @@ workflows:
     jobs:
       - sleep_0
       
-  # say-hello-workflow_from_fork: # This is the name of the workflow, feel free to change it to better match your workflow.
-  #   when:
-  #           not:
-  #                equal: [<<pipeline.project.git_url>>, https://github.com/anonymoustest03/gatest1-13]
-  #   jobs:
-  #     - sleep_0
+  say-hello-workflow_from_fork: # This is the name of the workflow, feel free to change it to better match your workflow.
+    when:
+            not:
+                 equal: [<<pipeline.project.git_url>>, https://github.com/anonymoustest03/gatest1-13]
+    jobs:
+      - sleep_0
   #     - sleep
   #     - sleep_2
   #     - sleep_3
