@@ -197,9 +197,7 @@ workflows:
       - sleep_0
       
   say-hello-workflow_from_fork: # This is the name of the workflow, feel free to change it to better match your workflow.
-    when:
-            not:
-                 equal: [<<pipeline.project.git_url>>, https://github.com/anonymoustest03/gatest1-13]
+    when: pipeline.event.name == "pull_request" and pipeline.event.action == "opened"
     jobs:
       - sleep_0
   #     - sleep
